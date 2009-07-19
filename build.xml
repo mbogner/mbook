@@ -1,0 +1,30 @@
+<!-- ant script for simple deployment of ear+ds to jboss -->
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mbook" basedir=".">
+
+    <property name="PROJECT" value="mbook" />
+    <property name="JBOSS_HOME" value="/home/manuel/bin/jboss-5.1.0.GA" />
+    <property name="JBOSS_PROFILE" value="default" />
+    <property name="WAIT" value="5" />
+
+
+    <target name="ds">
+        <copy file="${PROJECT}-ear/src/main/resources/${PROJECT}-ds.xml"
+            todir="${JBOSS_HOME}/server/${JBOSS_PROFILE}/deploy" />
+        <sleep seconds="${WAIT}" />
+    </target>
+
+    <target name="unds">
+        <delete file="${JBOSS_HOME}/server/${JBOSS_PROFILE}/deploy/${PROJECT}-ds.xml" />
+        <sleep seconds="${WAIT}" />
+    </target>
+
+    <target name="deploy">
+        <copy file="${PROJECT}-ear/target/${PROJECT}-ear.ear" todir="${JBOSS_HOME}/server/${JBOSS_PROFILE}/deploy" />
+    </target>
+
+    <target name="undeploy">
+        <delete file="${JBOSS_HOME}/server/${JBOSS_PROFILE}/deploy/${PROJECT}-ear.ear" />
+    </target>
+    
+</project>

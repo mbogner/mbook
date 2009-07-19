@@ -1,0 +1,9 @@
+Empty J2EE Seam 2.1.2 WebApp with Apache Maven 2 support. Netbeans support.
+
+There is also a simple ant build.xml in the root directory for local deployment. Please adapt the properties if you want to use it.
+
+The datasource lies in mbook-ear/src/main/resources/mbook-ds.xml and has to be manually copied to the deploy directory (or with the supplied ant build.xml) and the content has to be changed for your needs.
+
+The EJB project holds a simple Entity Bean for testing purpose ant the authenticor from the seam-gen project.
+
+Dependency management is used to administrate dependency versions of the project in the parent pom.xml.

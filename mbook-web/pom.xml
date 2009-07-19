@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>mbook</artifactId>
+        <groupId>at.bogner</groupId>
+        <version>1.0</version>
+    </parent>
+    <groupId>at.bogner</groupId>
+    <artifactId>mbook-web</artifactId>
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <name>mbook-web JEE5 Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+
+        <!-- not packaged deps - only local helpers -->
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- HACK, HACK, HACK - do not inculde jboss-seam.ejb in war; this causes an error in convergence check! -->
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam</artifactId>
+            <version>2.1.2</version>
+            <scope>provided</scope>
+            <type>ejb</type>
+        </dependency>
+
+        <!-- packaged in ear, only a reference (optional true) -->
+
+        <dependency>
+            <groupId>at.bogner</groupId>
+            <artifactId>mbook-ejb</artifactId>
+            <version>1.0</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam</artifactId>
+            <optional>true</optional>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.el</groupId>
+            <artifactId>jboss-el</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.richfaces.framework</groupId>
+            <artifactId>richfaces-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr-runtime</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-jpdl</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mvel</groupId>
+            <artifactId>mvel14</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-remoting</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>janino</groupId>
+            <artifactId>janino</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>core</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>janino</groupId>
+            <artifactId>janino</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Included in war (not optional/provided) -->
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-ioc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-debug</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-excel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-pdf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-rss</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam-jul</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.facelets</groupId>
+            <artifactId>jsf-facelets</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.richfaces.framework</groupId>
+            <artifactId>richfaces-impl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.richfaces.ui</groupId>
+            <artifactId>richfaces-ui</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>mbook-web</finalName>
+    </build>
+</project>
+
+
