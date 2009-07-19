@@ -10,7 +10,6 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="jboss.entity.manager.factory.jndi.name" value="java:/mbookEntityManagerFactory"/>
-            <property name="hibernate.default_catalog" value="PUBLIC"/>
         </properties>
     </persistence-unit>
 </persistence>
